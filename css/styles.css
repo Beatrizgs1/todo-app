@@ -6,7 +6,10 @@
 }
 
 :root{
-    --bg-header-mobile: url(../imagens/bg-header-mobile-light.png)
+    --bg-header-mobile: url(../imagens/bg-header-mobile-light.png);
+    --input-box-shadow: rgb(194, 195, 214, 0.50);
+    --input-color: #494C6B;
+    --button-color: #393A4B;
 }
 
 header{
@@ -23,11 +26,35 @@ header div{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
     margin-bottom: 2.5rem;
 }
 
 header div h1{
     color: #fff;
     text-transform: uppercase;
+}
+
+header form{
+    display: flex;
+    gap: 0.5rem;
+}
+
+header form input{
+   padding: 1.12rem;
+   border-radius: 0.3125rem;
+   border: none;
+   box-shadow: 0 35px 50px -15px var(--input-box-shadow);
+   width: 100%;
+   outline: none;
+   font-size: 0.75rem;
+   color: var(--input-color);
+}
+
+header form button{
+    padding: 0.75rem;
+    border-radius: 0.3125rem;
+    border: none;
+    color: var(--button-color);
+    color: #fff;
 }
