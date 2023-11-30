@@ -21,7 +21,7 @@ app.post('/criar', (requisicao, resposta) =>{
 
     const sql = `
     INSERT INTO tarefas(descricao, completa)
-    VALUES('${descricao}', '${completa}')
+    VALUES ('${descricao}', '${completa}')
     `
 
     conexao.query(sql,(erro) => {
@@ -33,7 +33,7 @@ app.post('/criar', (requisicao, resposta) =>{
 })
 
 app.get('/' , (requisicao, resposta) => {
-    resposta.render('home')
+    
 })
 
 app.get('/' , (requisicao, resposta) => {
@@ -51,6 +51,8 @@ app.get('/' , (requisicao, resposta) => {
             completa: dado completo === 0 ? false : true
     } 
     })
+    resposta.render('home', {tarefas})
+   })
 })
 
 const conexao = mysql.createConnection({
@@ -58,10 +60,10 @@ const conexao = mysql.createConnection({
     user: "root",
     password: "root",
     database : "todoapp",
-    port : "3006"
+    port : 3306
 
 
-)}
+})
 
 conexao.connect((erro) => {
     if(erro){
@@ -70,6 +72,9 @@ conexao.connect((erro) => {
     console.log("estou conectado ao  o Mysql")
 
     app.listen(3004, () => {
-        console.log("Servidor rodando na porta 3003!")
+        console.log("Servidor rodando na porta 3004!")
     })
+
+  
 })
+
