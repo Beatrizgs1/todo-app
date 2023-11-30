@@ -4,6 +4,7 @@ function alterarTema(){
     const tema = localStorage.getItem("tema")
     const body = document.querySelector("body")
     const button = document.querySelector(".tema-button")
+    
 
 
    if (tema) {
