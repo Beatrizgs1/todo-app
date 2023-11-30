@@ -90,6 +90,11 @@ header form input{
    color: var(--input-color);
    background: var(--input-bg);
 }
+header button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
 
 @media(min-width: 1000px){
     .botoes{
