@@ -1,10 +1,22 @@
-const { application } = require("express")
+const { application, json } = require("express")
 
 function completarTarefa(id) {
     fetch("http://localhost:3004/com/completar", {
         method: "POST",
         headers: {
             'Content-Type':application/json
+        },
+        body: JSON.stringify({id})
+    })
+    window.location.reload()
+}
+
+function descompletarTarefa(id){
+    fetch("http://localhost:3004/descompletar", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+
         },
         body: JSON.stringify({id})
     })
