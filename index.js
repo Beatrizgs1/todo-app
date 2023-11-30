@@ -73,6 +73,23 @@ app.get('/' , (requisicao, resposta) => {
 
 
 app.get('/ativas', (requisicao, resposta) =>{
+    const sql = `
+    SELECT  * FROM  tarefas
+    WHERE completa = 0
+    `
+    conexao.query(sql, (erro, dados) =>{
+        if (erro){
+            return console.log(erro)
+        }
+        const tarefas = dados.map((dado) =>{
+            return{
+                id: dado.id,
+                descricao: dado.descricao,
+                completa: false
+            }
+        })
+    })
+
 
 })
 
