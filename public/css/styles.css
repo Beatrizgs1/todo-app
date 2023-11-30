@@ -101,11 +101,7 @@ header button{
     text-decoration: line-through;
     color: var(--todo-complete-color);
 }
-@media(min-width: 1000px){
-    .botoes{
-        display: none;
-    }
-}
+
 
 header form button{
     padding: 0.75rem;
@@ -237,7 +233,7 @@ main{
         font-size: 1.125rem;
     }
     
-    .section.botoes{
+    section.botoes{
         display: none;
     }
 

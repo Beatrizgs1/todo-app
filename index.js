@@ -7,6 +7,10 @@ const app = express()
 app.engine('handlebars' , exphbs.engine())
 app.set('view engine' , 'handlebars')
 
+app.get('/' ,(requisicao, resposta) =>{
+    resposta.render('home')
+})
+
 app.use(express.static('public'))
 
 app.use(express.urlencoded({
@@ -136,7 +140,7 @@ app.get('/' , (requisicao, resposta) => {
         return console.log(erro)
     }
 
-    const tarefas = dados.map((dado) =>{
+    const tarefas = dados.map((dado) => {
         return {
             id: dado.id,
             descricao: dado.descricao,
@@ -170,9 +174,7 @@ conexao.connect((erro) => {
     console.log("estou conectado ao  o Mysql")
 
     app.listen(3004, () => {
-        console.log("Servidor rodando na porta 3004!")
-    })
-
-  
+        console.log("Servidor rodando na porta 3001!")
+    }) 
 })
 

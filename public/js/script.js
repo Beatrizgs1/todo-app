@@ -1,7 +1,7 @@
 const { application, json } = require("express")
 
 function completarTarefa(id) {
-    fetch("http://localhost:3004/com/completar", {
+    fetch("http://localhost:3001/com/completar", {
         method: "POST",
         headers: {
             'Content-Type':application/json
@@ -11,7 +11,7 @@ function completarTarefa(id) {
     window.location.reload()
 }
 function excluirTarefa(id){
-    fetch("http://localhost:3004/excluir", {
+    fetch("http://localhost:3001/excluir", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
